@@ -35,6 +35,7 @@
             this.AgeTextBox = new System.Windows.Forms.TextBox();
             this.AgeLabel = new System.Windows.Forms.Label();
             this.SubmitButton = new System.Windows.Forms.Button();
+            this.OutputLabel = new System.Windows.Forms.Label();
             this.InfoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,6 @@
             this.InfoGroupBox.Controls.Add(this.AgeLabel);
             this.InfoGroupBox.Controls.Add(this.NameTextBox);
             this.InfoGroupBox.Controls.Add(this.NameLabel);
-            this.InfoGroupBox.Enabled = false;
             this.InfoGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InfoGroupBox.Location = new System.Drawing.Point(13, 44);
             this.InfoGroupBox.Name = "InfoGroupBox";
@@ -90,7 +90,8 @@
             this.AgeTextBox.Location = new System.Drawing.Point(190, 72);
             this.AgeTextBox.Name = "AgeTextBox";
             this.AgeTextBox.Size = new System.Drawing.Size(397, 38);
-            this.AgeTextBox.TabIndex = 3;
+            this.AgeTextBox.TabIndex = 2;
+            this.AgeTextBox.TextChanged += new System.EventHandler(this.AgeTextBox_TextChanged);
             // 
             // AgeLabel
             // 
@@ -109,9 +110,18 @@
             this.SubmitButton.Location = new System.Drawing.Point(445, 378);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(154, 51);
-            this.SubmitButton.TabIndex = 2;
+            this.SubmitButton.TabIndex = 3;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = false;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
+            // 
+            // OutputLabel
+            // 
+            this.OutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputLabel.Location = new System.Drawing.Point(7, 388);
+            this.OutputLabel.Name = "OutputLabel";
+            this.OutputLabel.Size = new System.Drawing.Size(432, 31);
+            this.OutputLabel.TabIndex = 4;
             // 
             // Lab08Form
             // 
@@ -119,13 +129,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.OutputLabel);
             this.Controls.Add(this.SubmitButton);
             this.Controls.Add(this.InfoGroupBox);
             this.Controls.Add(this.TitleLabel);
-            this.Enabled = false;
             this.Name = "Lab08Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lab08";
+            this.Load += new System.EventHandler(this.Lab08Form_Load);
             this.InfoGroupBox.ResumeLayout(false);
             this.InfoGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -142,6 +153,7 @@
         private System.Windows.Forms.TextBox AgeTextBox;
         private System.Windows.Forms.Label AgeLabel;
         private System.Windows.Forms.Button SubmitButton;
+        private System.Windows.Forms.Label OutputLabel;
     }
 }
 
